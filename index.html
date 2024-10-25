@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://quota.jc.tu.ac.th/images/jc_logo.png" type="image/png">
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
+
+    * {
+      font-family: "Noto Sans Thai", sans-serif;
+    }
       /* Basic reset */
       * {
         margin: 0;
@@ -20,7 +25,6 @@
         padding: 15px 20px;
         background-color: purple;
         color: white;
-        width: 100%;
       }
 
       .navbar img {
@@ -34,25 +38,14 @@
         font-weight: bold;
       }
 
-      /* Responsive font sizing for Navbar */
-      @media (max-width: 768px) {
-        .navbar h1 {
-          font-size: 20px;
-        }
-        .navbar img {
-          width: 40px;
-          height: 40px;
-        }
-      }
-
       /* Center container for the card */
       .center-container {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
+        min-height: 80vh;
         padding: 20px;
-        text-align: center;
       }
 
       /* Card styling */
@@ -63,6 +56,7 @@
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         background-color: #fff;
+        margin-bottom: 20px;
       }
 
       .card-header {
@@ -101,7 +95,6 @@
         font-size: 16px;
         font-weight: bold;
         text-align: center;
-        border-radius: 0;
         transition: background-color 0.3s ease;
       }
 
@@ -109,14 +102,25 @@
         background-color: #5e0f83;
       }
 
-      /* Footer styling inside card */
+      /* Footer styling (not fixed) */
       .footer {
         background-color: #333;
         color: #f1f1f1;
         text-align: center;
         padding: 10px;
         font-size: 14px;
-        border-radius: 0 0 10px 10px;
+        width: 100%;
+      }
+
+      /* Responsive font sizing for Navbar */
+      @media (max-width: 768px) {
+        .navbar h1 {
+          font-size: 20px;
+        }
+        .navbar img {
+          width: 40px;
+          height: 40px;
+        }
       }
     </style>
   </head>
@@ -160,21 +164,21 @@
 
         <!-- Button linking to Google Apps Script at the bottom of the card -->
         <a id="fund-button" class="button-link" target="_blank">ดำเนินการเปลี่ยนแปลงกองทุนฯ</a>
-      
+      </div>
+    </div>
+
 
     <!-- Footer inside the card -->
-    <div class="footer">
+    <footer class="footer">
       Copyright © 2024 Faculty of Journalism and Mass Communication, Thammasat University. All rights reserved.<br>
         Powered by
       <a href="https://jc.tu.ac.th/th/personnel/staff#committee_214" class="icon-link" target="_top">
         งานเทคโนโลยีดิจิตอลและการสื่อสาร
       </a>
       <br><br>
-    </div>
+    </footer>
 
-        </div>
-    </div>
-
+        
     <script>
       // Function to detect if the user is on an iOS device
       function isIOS() {
