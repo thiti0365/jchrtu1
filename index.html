@@ -113,16 +113,17 @@
     <!-- Navbar -->
     <nav class="navbar">
       <img src="https://quota.jc.tu.ac.th/images/jc_logo.png" alt="Logo">
-      <h1>ระบบกองทุนสำรองเลี้ยงชีพ</h1>
+      <h1>ระบบเปลี่ยนแปลงเงินสะสมกองทุนสำรองเลี้ยงชีพ
+</h1>
     </nav>
 
     <!-- Center Container -->
     <div class="center-container">
       <div class="card">
         <div class="card-header py-3 text-white">
-          <h3 class="my-0 fw-normal">คำแนะนำในการขอเปลี่ยนแปลงเงินสะสมกองทุนสำรองฯ
+          <h2 class="my-0 fw-normal">คำแนะนำในการขอเปลี่ยนแปลงเงินสะสมกองทุนสำรองฯ
             <i class="fa-solid fa-comment-medical fa-beat" style="color: #fcfcfc;"></i>
-          </h3>
+          </h2>
         </div>
         <div class="card-body">
           <div class="step">
@@ -150,15 +151,44 @@
         </div>
 
         <!-- Button linking to Google Apps Script at the bottom of the card -->
-        <a href="https://script.google.com/a/macros/tu.ac.th/s/AKfycbxaoKtKlwlUMsAxGgOPIUqQ2usSSLowjHdCFIZgqhwOyWHhMcdgRNGbHVCXAjvQvn89_Q/exec?fbclid=IwY2xjawGBW81leHRuA2FlbQIxMAABHdECaq9rixZtZgvfwaV2L9iShTggX89gCjLHIh8FitvcQ5mbhBO4I3QqMQ_aem_qaiv8lAS75Wqi8JDAy1KaA" target="_blank" class="button-link">
-          ไปยังระบบกองทุนฯ
-        </a>
+        <a id="fund-button" class="button-link" target="_blank">ดำเนินการเปลี่ยนแปลงกองทุนฯ</a>
       </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-      © 2024 ระบบกองทุนสำรองเลี้ยงชีพ
+      Copyright © 2024 Faculty of Journalism and Mass Communication, Thammasat University. All rights reserved.<br>
+      หากท่านมีข้อสงสัยสามารถติดต่อเจ้าหน้าที่ได้ที่เบอร์ 02-696-6216 (เบอร์ภายใน กด 6216 || ต้า) Powered by
+      <a href="https://jc.tu.ac.th/th/personnel/staff#committee_214" class="icon-link" target="_top">
+        งานเทคโนโลยีดิจิตอลและการสื่อสาร
     </footer>
+
+    <script>
+      // Function to detect if the user is on an iOS device
+      function isIOS() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      }
+
+      // Function to detect if the user is using Facebook's in-app browser
+      function isFacebookApp() {
+        return /FBAN|FBAV/i.test(navigator.userAgent);
+      }
+
+      // Set the link based on device and browser detection
+      function setFundButtonLink() {
+        var fundButton = document.getElementById('fund-button');
+        
+        if (isFacebookApp() && isIOS()) {
+          // If opened from Facebook's in-app browser on iOS
+          fundButton.href = 'x-safari-https://script.google.com/macros/s/AKfycbym5W6uKCUONhTmi3FnNPQzSknJ3NquosWe4W2j-YcPwqO5GIT4a9qaJJln_V5yAf-y/exec?fbclid=IwY2xjawGBW81leHRuA2FlbQIxMAABHdECaq9rixZtZgvfwaV2L9iShTggX89gCjLHIh8FitvcQ5mbhBO4I3QqMQ_aem_qaiv8lAS75Wqi8JDAy1KaA';
+        } else {
+          // For all other browsers/platforms
+          fundButton.href = 'https://script.google.com/macros/s/AKfycbym5W6uKCUONhTmi3FnNPQzSknJ3NquosWe4W2j-YcPwqO5GIT4a9qaJJln_V5yAf-y/exec?fbclid=IwY2xjawGBW81leHRuA2FlbQIxMAABHdECaq9rixZtZgvfwaV2L9iShTggX89gCjLHIh8FitvcQ5mbhBO4I3QqMQ_aem_qaiv8lAS75Wqi8JDAy1KaA';
+        }
+      }
+
+      // Run the function to set the link on page load
+      setFundButtonLink();
+    </script>
   </body>
 </html>
