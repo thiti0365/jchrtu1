@@ -5,13 +5,39 @@
     <meta charset="UTF-8">
     <link rel="icon" href="https://quota.jc.tu.ac.th/images/jc_logo.png" type="image/png">
     <style>
-      /* Container to center the content (flexbox) */
+      /* Basic reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Navbar styling */
+      .navbar {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: purple;
+        color: white;
+      }
+
+      .navbar img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .navbar h1 {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      /* Center container for the card */
       .center-container {
         display: flex;
         justify-content: center;
-        align-items: flex-start;
-        height: 100vh;
-        flex-direction: column;
+        align-items: center;
+        min-height: calc(100vh - 100px); /* Adjusted to leave space for navbar and footer */
         text-align: center;
         padding: 20px;
       }
@@ -20,7 +46,6 @@
       .card {
         width: 80%;
         max-width: 600px;
-        margin: auto;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -41,43 +66,99 @@
         line-height: 1.6;
       }
 
+      /* Styling for steps and horizontal rule */
+      .step {
+        margin: 20px 0;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 20px 0;
+      }
+
       /* Button styling */
       .button-link {
-        display: inline-block;
+        display: block;
         background-color: purple;
         color: white;
-        padding: 12px 24px;
-        margin-top: 20px;
+        padding: 12px 0;
         text-decoration: none;
         font-size: 16px;
         font-weight: bold;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        border-radius: 0 0 10px 10px;
         transition: background-color 0.3s ease;
       }
 
       .button-link:hover {
         background-color: #5e0f83;
       }
+
+      /* Footer styling */
+      .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #f1f1f1;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+      }
     </style>
   </head>
   <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <img src="https://quota.jc.tu.ac.th/images/jc_logo.png" alt="Logo">
+      <h1>ระบบกองทุนสำรองเลี้ยงชีพ</h1>
+    </nav>
+
+    <!-- Center Container -->
     <div class="center-container">
       <div class="card">
-        <div class="card-header py-3 text-white" style="background-color: purple;">
+        <div class="card-header py-3 text-white">
           <h3 class="my-0 fw-normal">คำแนะนำในการขอเปลี่ยนแปลงเงินสะสมกองทุนสำรองฯ
             <i class="fa-solid fa-comment-medical fa-beat" style="color: #fcfcfc;"></i>
           </h3>
         </div>
         <div class="card-body">
-          &emsp;&emsp;สมาชิกที่จะขอเปลี่ยนแปลงเงินสะสม จะต้องเลือกแผนเงินสะสมใหม่ และกดปุ่ม Submit
-        </div>
-      </div>
+          <div class="step">
+            <h4>ขั้นตอนที่ 1:</h4>
+            &emsp;&emsp;เข้าสู่ระบบด้วยบัญชีผู้ใช้งานของคุณ
+          </div>
+          <hr>
 
-      <!-- Button linking to Google Apps Script -->
-      <a href="https://script.google.com/a/macros/tu.ac.th/s/AKfycbxaoKtKlwlUMsAxGgOPIUqQ2usSSLowjHdCFIZgqhwOyWHhMcdgRNGbHVCXAjvQvn89_Q/exec?fbclid=IwY2xjawGBW81leHRuA2FlbQIxMAABHdECaq9rixZtZgvfwaV2L9iShTggX89gCjLHIh8FitvcQ5mbhBO4I3QqMQ_aem_qaiv8lAS75Wqi8JDAy1KaA" target="_blank" class="button-link">
-        ไปยังระบบกองทุนฯ
-      </a>
+          <div class="step">
+            <h4>ขั้นตอนที่ 2:</h4>
+            &emsp;&emsp;เลือกแผนเงินสะสมใหม่ที่ต้องการ
+          </div>
+          <hr>
+
+          <div class="step">
+            <h4>ขั้นตอนที่ 3:</h4>
+            &emsp;&emsp;ตรวจสอบข้อมูลที่เลือกและยืนยันการเปลี่ยนแปลง
+          </div>
+          <hr>
+
+          <div class="step">
+            <h4>ขั้นตอนที่ 4:</h4>
+            &emsp;&emsp;กดปุ่ม Submit เพื่อบันทึกการเปลี่ยนแปลงเงินสะสม
+          </div>
+        </div>
+
+        <!-- Button linking to Google Apps Script at the bottom of the card -->
+        <a href="https://script.google.com/a/macros/tu.ac.th/s/AKfycbxaoKtKlwlUMsAxGgOPIUqQ2usSSLowjHdCFIZgqhwOyWHhMcdgRNGbHVCXAjvQvn89_Q/exec?fbclid=IwY2xjawGBW81leHRuA2FlbQIxMAABHdECaq9rixZtZgvfwaV2L9iShTggX89gCjLHIh8FitvcQ5mbhBO4I3QqMQ_aem_qaiv8lAS75Wqi8JDAy1KaA" target="_blank" class="button-link">
+          ไปยังระบบกองทุนฯ
+        </a>
+      </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      © 2024 ระบบกองทุนสำรองเลี้ยงชีพ
+    </footer>
   </body>
 </html>
