@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://quota.jc.tu.ac.th/images/jc_logo.png" type="image/png">
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
 
-    * {
-      font-family: "Noto Sans Thai", sans-serif;
-    }
-      /* Basic reset */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Noto Sans Thai", sans-serif;
+      }
+
+      /* Set up body to be a flex container and take up full viewport height */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
 
       /* Navbar styling */
@@ -40,11 +44,11 @@
 
       /* Center container for the card */
       .center-container {
+        flex: 1; /* Takes available space */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 80vh;
         padding: 20px;
       }
 
@@ -102,7 +106,7 @@
         background-color: #5e0f83;
       }
 
-      /* Footer styling (not fixed) */
+      /* Footer styling (sticky at the bottom) */
       .footer {
         background-color: #333;
         color: #f1f1f1;
@@ -110,6 +114,7 @@
         padding: 10px;
         font-size: 14px;
         width: 100%;
+        margin-top: auto; /* Push footer to the bottom */
       }
 
       /* Responsive font sizing for Navbar */
