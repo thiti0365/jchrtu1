@@ -3,6 +3,7 @@
   <head>
     <title>คำแนะนำการใช้งานระบบกองทุนฯ</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://quota.jc.tu.ac.th/images/jc_logo.png" type="image/png">
     <style>
       /* Basic reset */
@@ -16,15 +17,16 @@
       .navbar {
         display: flex;
         align-items: center;
-        padding: 10px 20px;
+        padding: 15px 20px;
         background-color: purple;
         color: white;
+        width: 100%;
       }
 
       .navbar img {
-        width: 40px;
-        height: 40px;
-        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
       }
 
       .navbar h1 {
@@ -32,23 +34,35 @@
         font-weight: bold;
       }
 
+      /* Responsive font sizing for Navbar */
+      @media (max-width: 768px) {
+        .navbar h1 {
+          font-size: 20px;
+        }
+        .navbar img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
       /* Center container for the card */
       .center-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: calc(100vh - 100px); /* Adjusted to leave space for navbar and footer */
-        text-align: center;
+        min-height: calc(100vh - 150px); /* Adjusted to leave space for navbar and footer */
         padding: 20px;
+        text-align: center;
       }
 
       /* Card styling */
       .card {
-        width: 80%;
+        width: 100%;
         max-width: 600px;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
       }
 
       .card-header {
@@ -113,17 +127,14 @@
     <!-- Navbar -->
     <nav class="navbar">
       <img src="https://quota.jc.tu.ac.th/images/jc_logo.png" alt="Logo">
-      <h1>ระบบเปลี่ยนแปลงเงินสะสมกองทุนสำรองเลี้ยงชีพ
-</h1>
+      <h1>ระบบเปลี่ยนแปลงเงินสะสมกองทุนสำรองเลี้ยงชีพ</h1>
     </nav>
 
     <!-- Center Container -->
     <div class="center-container">
       <div class="card">
-        <div class="card-header py-3 text-white">
-          <h2 class="my-0 fw-normal">คำแนะนำในการขอเปลี่ยนแปลงเงินสะสมกองทุนสำรองฯ
-            <i class="fa-solid fa-comment-medical fa-beat" style="color: #fcfcfc;"></i>
-          </h2>
+        <div class="card-header">
+          <h2>คำแนะนำในการขอเปลี่ยนแปลงเงินสะสมกองทุนสำรองฯ</h2>
         </div>
         <div class="card-body">
           <div class="step">
@@ -158,9 +169,11 @@
     <!-- Footer -->
     <footer class="footer">
       Copyright © 2024 Faculty of Journalism and Mass Communication, Thammasat University. All rights reserved.<br>
-      หากท่านมีข้อสงสัยสามารถติดต่อเจ้าหน้าที่ได้ที่เบอร์ 02-696-6216 (เบอร์ภายใน กด 6216 || ต้า) Powered by
+        Powered by
       <a href="https://jc.tu.ac.th/th/personnel/staff#committee_214" class="icon-link" target="_top">
         งานเทคโนโลยีดิจิตอลและการสื่อสาร
+      </a>
+      <br><br>
     </footer>
 
     <script>
@@ -180,10 +193,10 @@
         
         if (isFacebookApp() && isIOS()) {
           // If opened from Facebook's in-app browser on iOS
-          fundButton.href = 'x-safari-https://script.google.com/macros/s/AKfycbym5W6uKCUONhTmi3FnNPQzSknJ3NquosWe4W2j-YcPwqO5GIT4a9qaJJln_V5yAf-y/exec?fbclid=IwY2xjawGBW81leHRuA2FlbQIxMAABHdECaq9rixZtZgvfwaV2L9iShTggX89gCjLHIh8FitvcQ5mbhBO4I3QqMQ_aem_qaiv8lAS75Wqi8JDAy1KaA';
+          fundButton.href = 'x-safari-https://script.google.com/a/macros/tu.ac.th/s/AKfycbxaoKtKlwlUMsAxGgOPIUqQ2usSSLowjHdCFIZgqhwOyWHhMcdgRNGbHVCXAjvQvn89_Q/exec?fbclid=IwY2xjawGBW81leHRuA2FlbQIxMAABHdECaq9rixZtZgvfwaV2L9iShTggX89gCjLHIh8FitvcQ5mbhBO4I3QqMQ_aem_qaiv8lAS75Wqi8JDAy1KaA';
         } else {
           // For all other browsers/platforms
-          fundButton.href = 'https://script.google.com/macros/s/AKfycbym5W6uKCUONhTmi3FnNPQzSknJ3NquosWe4W2j-YcPwqO5GIT4a9qaJJln_V5yAf-y/exec?fbclid=IwY2xjawGBW81leHRuA2FlbQIxMAABHdECaq9rixZtZgvfwaV2L9iShTggX89gCjLHIh8FitvcQ5mbhBO4I3QqMQ_aem_qaiv8lAS75Wqi8JDAy1KaA';
+          fundButton.href = 'https://script.google.com/a/macros/tu.ac.th/s/AKfycbxaoKtKlwlUMsAxGgOPIUqQ2usSSLowjHdCFIZgqhwOyWHhMcdgRNGbHVCXAjvQvn89_Q/exec?fbclid=IwY2xjawGBW81leHRuA2FlbQIxMAABHdECaq9rixZtZgvfwaV2L9iShTggX89gCjLHIh8FitvcQ5mbhBO4I3QqMQ_aem_qaiv8lAS75Wqi8JDAy1KaA';
         }
       }
 
